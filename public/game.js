@@ -44,13 +44,33 @@ function handleClick(index) {
 function updateBoard() {
   const cells = document.querySelectorAll('.cell');
 
-  // Llenar las celdas con los valores del tablero (X o O)
+  // Limpiar el contenido de cada celda antes de colocar una imagen
+  cells.forEach(cell => {
+    cell.innerHTML = '';
+  });
+
+  // Llenar las celdas con las imágenes correspondientes
   for (let i = 0; i < 9; i++) {
     const row = Math.floor(i / 3);
     const col = i % 3;
-    cells[i].textContent = board[row][col];
+    const cell = cells[i];
+
+    if (board[row][col] === 'X') {
+      const img = document.createElement('img');
+      img.src = 'img/perrito.png'; // Ruta de la imagen del perrito
+      img.alt = 'Cara de perrito';
+      img.classList.add('icon');
+      cell.appendChild(img);
+    } else if (board[row][col] === 'O') {
+      const img = document.createElement('img');
+      img.src = 'img/gatica.png'; // Ruta de la imagen de la gatica
+      img.alt = 'Cara de gatica';
+      img.classList.add('icon');
+      cell.appendChild(img);
+    }
   }
 }
+
 
 function updateCurrentPlayer() {
   document.getElementById('currentPlayer').textContent = currentPlayer;

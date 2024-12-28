@@ -6,7 +6,7 @@
   
   body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: rgb(230, 208, 212);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +43,7 @@
   
   button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: purple;
     color: white;
     border: none;
     border-radius: 5px;
@@ -53,5 +53,11 @@
   
   button:hover {
     background-color: #45a049;
+  }
+  .icon{
+    width: 80%; /* Ajusta el tamaño de la imagen */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centra la imagen dentro de la celda */
   }
   
