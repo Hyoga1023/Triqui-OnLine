@@ -105,12 +105,14 @@ function switchPlayer() {
 // Actualizar el tablero visual en la interfaz
 function updateBoard() {
   const cells = document.querySelectorAll('.cell');
+  console.log(board); // Verifica el estado del tablero
   for (let i = 0; i < 9; i++) {
     const row = Math.floor(i / 3);
     const col = i % 3;
     cells[i].textContent = board[row][col]; // Actualizar el contenido de la celda
   }
 }
+
 
 // Actualizar el texto del jugador actual
 function updateCurrentPlayer() {
